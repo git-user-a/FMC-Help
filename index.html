@@ -6,17 +6,17 @@
 <BODY>
 <a name="Overview">
 <table width="760" border="0" align="center" cellpadding="0" cellspacing="10"  bgcolor="#FFFBEF">
-    
+
     <tr>
         <td> <a href="http://w60091.drivehq.com"> <img height=100 valign="top" src="FMC_Logo_150.PNG" /></a>
         </td>
         <td align="right" valign="bottom"><h1><i>FMCompare v.1.4</i></h1></td>
     </tr>
-    
+
 <tr><td colspan=3 align="right" valign="top"><hr valign="bottom"></td></tr>
-    
+
 <tr>
-    <td valign="top" align="right">  <h3>Overview</h3></td>        
+    <td valign="top" align="right">  <h3>Overview</h3></td>
     <td valign="top"><p></p>
         FMCompare application allows user to compare core components of two VistA accounts:<br>
         <br>
@@ -26,13 +26,13 @@
         <p>
         The application requires custom RPC to be installed in all accounts you plan to compare.<br>
         FMDC package is used for selection of the VistA files.<br>
-        The M user supposed to have XUPROG key assigned. 
+        The M user supposed to have XUPROG key assigned.
         <p>
-    </td>    
-</tr>    
+    </td>
+</tr>
 <tr>
     <td></td>
-    <td>       
+    <td>
         <a HREF="#QS">Quick Start</a><br>
         <a HREF="#Installation">Installation</a><br>
         <a HREF="#RPC">RPC Interface</a><br>
@@ -47,8 +47,8 @@
         <p>
     <td>
 <tr>
-    <td valign="top" align="right">  <h3><a name="QS">QuickStart</a></h3></td>        
-    <td>    
+    <td valign="top" align="right">  <h3><a name="QS">QuickStart</a></h3></td>
+    <td>
         <li> Start the application </li>
         <li> Connect to servers </li>
         <li> Select an Item for review</li>
@@ -66,12 +66,12 @@
         <p>After the master password is set the account selection dialog is opened:
         </p>
         <p ><img SRC="SelectAccount.PNG"/></p>
-        To select an account for connection double click the corresponding line of the accounts list or 
+        To select an account for connection double click the corresponding line of the accounts list or
         highlight the line and click "Select" button.
-        <p>(To modify the server list use "Add" or "Delete" button.)<br> 
-        
+        <p>(To modify the server list use "Add" or "Delete" button.)<br>
+
         <p>If the connection was successful the application enables several buttons on the toolbar and reports the connection parameters.
-        <p ><img SRC="xConnectionInfoMsg.jpg"/>
+        <p ><img SRC="ConnectionInfoMsg.jpg"/>
 
         <h4>Selecting an Item for review</h4>
         <p>Select the category of items for comparisson by clicking on of the buttons on the toolbar.</p>
@@ -82,17 +82,17 @@
         <p>For example:</p>
         <li>OR* - select all routines with the names started with "OR"</li>
         <li>PXPXR* - select all routines with the names started with "PXPXR"</li>
-        
+
         <p>To search globals enter the first global node to start with:</p>
         <li>DD(0) - select globals starting from DD(0)</li>
         <li>DIC(0) - select globals starting from DIC(0)</li>
-        
+
         <p>To search FM files enter the beginning of the file name or the file number</p>
-        
+
         <p>NOTE: By default the application will limit the search result to 50 record. User can change the default value in the configuration dialog.</p>
-        
+
         <p>To start the search ckick "Search" button or "Ctrl+Enter"</p>
-        
+
         <h4>Search Results</h4>
         <p>For the routine search the application returns routine names and checksums:
         <p ><img width=700 SRC="CompareRoutines_Details.PNG"/>
@@ -103,10 +103,10 @@
         <a HREF="#Overview">Overview</a><br>
 
     <td>
-    
+
 <tr>
-    <td valign="top" align="right">  <h3><a name="Installation">Installation</a></h3></td>        
-    <td>     
+    <td valign="top" align="right">  <h3><a name="Installation">Installation</a></h3></td>
+    <td>
 
 <p>To install the application:
 <li>Put files of the client GUI on your local drive.
@@ -122,13 +122,13 @@
 <p>Configuration file contains connection parameters and the user preferences.<br>
 It should be placed in a folder the user have write privileges.<br>
 The file contains following data:<br>
-<li> Accounts IP and port 
+<li> Accounts IP and port
 <li> Accounts type (VISTA or OSEHRA)
 <li> A/V codes (if provided values are encrypted with the Master password)
-<li> Color assigned to the account 
-<li> Additional GUI settings 
+<li> Color assigned to the account
+<li> Additional GUI settings
 <p>Configuraion file is required only if you are planning to connect to OSEHRA accounts.
-<p>The default name of the configuration file <i>FMCompare.cfg</i>.<br> 
+<p>The default name of the configuration file <i>FMCompare.cfg</i>.<br>
 Note that the location of files can be provided as parameters:
 <pre>
     /config=ConfigurationFileName
@@ -145,10 +145,10 @@ The registration parameters:
 <a HREF="#Overview">Overview</a>
 
     <td>
-    
+
 <tr>
-    <td valign="top" align="right">  <h3><a name="RPC">RPC Interface</a></h3></td>        
-    <td>     
+    <td valign="top" align="right">  <h3><a name="RPC">RPC Interface</a></h3></td>
+    <td>
 
 <p>
 The application uses one RPC for communication with VistA.<br>
@@ -173,22 +173,22 @@ the rest of the result array contains data if any:
     RESULT(RC)=data_RC
 </pre>
 Zero or positive RC identifies the last index of the RESULT array<br>
-For negative RC description of the error is in the second piece ("^" delimeter) of the RESULT(0)  
+For negative RC description of the error is in the second piece ("^" delimeter) of the RESULT(0)
 
 <p>FMCompare uses the following options:<p>
 <li> "RSOURCE" - to get the routine source code
 <li> "RCHKSUM" - to calculate the routines checksum
-<li> "LISTGLBL" - to get global data 
+<li> "LISTGLBL" - to get global data
 <li> "RLIST" - to find routines by the search target
 <p>
 The default RPC name is <i>ZZFMVIEW</i><br>
 
 <p><a HREF="#Overview">Overview</a> </p>
-    
+
     <td>
 <tr>
-    <td valign="top" align="right">  <h3><a name="ApplicationLog">Application Log</a></h3></td>        
-    <td>     
+    <td valign="top" align="right">  <h3><a name="ApplicationLog">Application Log</a></h3></td>
+    <td>
 
 <p>Application log includes records for all RPC that were executed.
 <p>
@@ -199,13 +199,13 @@ The default RPC name is <i>ZZFMVIEW</i><br>
 
     <td>
 <tr>
-    <td valign="top" align="right">  <h3><a name="Setup">Preferencess and Accounts</a></h3></td>        
-    <td>     
+    <td valign="top" align="right">  <h3><a name="Setup">Preferencess and Accounts</a></h3></td>
+    <td>
 <p>To open preferences dialog click <img SRC="btnPreferences.png"/> button of the main menu:
 <p><img SRC="FMCompareMainMenu.png"/>
 <p><img width=700 SRC="Preferences.png"/>
 <p>The Preferences dialog provides access to the next parameters:
-<li>Save Log On Exit - allows to save the log in the file on exiting of the application. The default value is "TRUE". 
+<li>Save Log On Exit - allows to save the log in the file on exiting of the application. The default value is "TRUE".
 <li>RPC Name - the name of the RPC used to communicate with the server. The default value is "ZZFMVIEW"
 <li>Application Context - Application context to use to call the RPC. The default value is blank.
 <li>Status Expiration - time (sec) to keep diagnostic message in the status bar. The default value is 5 (sec)
@@ -220,7 +220,7 @@ The default RPC name is <i>ZZFMVIEW</i><br>
 <li>Records to return by a single call - max number of records to return by a single RPC call
 <li>RPC Broker Limit - Time (seconds) to wait for the RPC results
 <li>Style - GUI Style
-    
+
 <p>
 <p>
 <a HREF="#Overview">Overview</a>
@@ -237,24 +237,24 @@ The default RPC name is <i>ZZFMVIEW</i><br>
 <li>IP - IP address (Numeric or mnemonic)
 <li>Port - connection port
 <li>Comments - additional information on account
-<li>e-Mail - reserved 
+<li>e-Mail - reserved
 <li>Data Dictionary (DD) - ID to identify local dictionary for that account
 <li>Expired in (days) - refresh rate of the local dictionary.
 <li>Auto Update - if 1 the Local dictionary will be updated for that account
-<li>Access;Verify - Access and verify codes used to establish the connection. 
-<p>    
-    <i>Note</i> that codes are separated by ";". The application uses Master password to encrypt/decript the value of that field. Be careful providing Master password. 
+<li>Access;Verify - Access and verify codes used to establish the connection.
+<p>
+    <i>Note</i> that codes are separated by ";". The application uses Master password to encrypt/decript the value of that field. Be careful providing Master password.
 
 <p>The local toolbar of the Accounta tab allows:
 <li>Import/Export - export accounts table data as XML document
-<li>Password - reset Master password 
+<li>Password - reset Master password
 <li>Set Broker - re-create RPC Brokers associated with accounts
 <li>Reser ID - reset values of ID fields
 <li>ReConnect - reconnect RPC Brokers associated with the accounts
-<li>Save AV - encrypt and save Access and Verify codes in the table. 
+<li>Save AV - encrypt and save Access and Verify codes in the table.
 <li>Copy AV - copy decripted values of A/V codes to the clipboard
 <li>Details - show/hide the details area
-    
+
 <p>Buttons are provided with hints
 <p>
 <p>
@@ -262,17 +262,17 @@ The default RPC name is <i>ZZFMVIEW</i><br>
 
     </td>
     </tr>
-    
+
 <tr>
-    <td valign="top" align="right">  <h3><a name="Setup">Sample RPC implementation</a></h3></td>        
+    <td valign="top" align="right">  <h3><a name="Setup">Sample RPC implementation</a></h3></td>
     <td> <a name="ZZFMVIEW">
     <pre>
-    
+
 ZZFMVIEW ; /WAA/AA - GUI INTERFACE ROUTINE ; 23/08/2012 11:54
  ;;1.16;ZZFMVIEW;;MAY 2018
  ;
 RPC(RESULT,OPTION,ARRAY) ; RPC processing entry point
- ; 
+ ;
  I $$VALIDOPT(OPTION)=0 S RESULT(0)="-1^Option "_OPTION_" is not supported by this RPC" Q
  D CLEAN^DILF
  S RESULT=$NA(^TMP("ZZFM00",$J)) K @RESULT
@@ -303,11 +303,11 @@ VALIDOPT(OPTNAME) ;
 NULL ;
  S RESULT(0)="0^NULL"
  Q
- ; 
+ ;
 VERSION ;
  S RESULT(0)="1",RESULT(1)=$P($T(+2),";",3)
  Q
- ; 
+ ;
 ECHO ;
  N G,OUT S G="",OUT=0
  F I=1:1 D  Q:OUT=1
@@ -362,12 +362,12 @@ FMFDATA ;
 SHOW1 ; Local. Not used as an OPTION
  S RESULT(J)=J_"|"_NODE_"|"_@NODE,FOUND=1,J=J+1
  Q
- ; 
+ ;
 LISTGR ;
  ;Lists global. ARRAY(0) -starting node, ARRAY(1) -Nodes to return, ARRAY(2) - Direction
  N I,FOUND,G,NODE,J,DIR,CNT,II
  S I=0,FOUND=0,J=0,CNT=10,II=1
- S NODE=ARRAY(0),DIR=-1 ; default direction 
+ S NODE=ARRAY(0),DIR=-1 ; default direction
  I $G(ARRAY(1)) S CNT=ARRAY(1) ; set default count
  I $G(ARRAY(2)) S DIR=ARRAY(2) ; set direction if specified
  S G=$D(@NODE),RESULT(0)="-1^Global "_NODE_" Not found"  ;_"DIR="_DIR
@@ -379,12 +379,12 @@ LISTGR ;
  I 'FOUND Q
  S RESULT(0)=J-1_"|"_NODE
  Q
- ; 
-NDSHOW(NODE) 
+ ;
+NDSHOW(NODE)
  Q:'$D(NODE)
  S RESULT(J)=J_"|"_NODE
  I $D(NODE)#2=1 S RESULT(J)=RESULT(J)_"|"_@NODE
- S J=J+1 
+ S J=J+1
  Q
  ;
 NDNAME(NODE,X) ; Replaces last subscript of NODE with X
@@ -392,7 +392,7 @@ NDNAME(NODE,X) ; Replaces last subscript of NODE with X
  S TMP=$NA(@NODE,$QL(NODE)-1)
  Q $NA(@TMP@(X))
  ;
-NDDOWN(NODE,NDLIMIT) ; Finds next node starting with NODE up to LIMIT 
+NDDOWN(NODE,NDLIMIT) ; Finds next node starting with NODE up to LIMIT
  N TMP,TMPOLD,I,III
  S TMPOLD=NODE,TMP=$Q(@NODE),III=2000
  I TMP=NDLIMIT Q TMPOLD
@@ -402,31 +402,31 @@ NDDOWN(NODE,NDLIMIT) ; Finds next node starting with NODE up to LIMIT
  I I=III S RESULT(J)="!!!",J=J+1 ; debug
  Q TMPOLD
  ;
-NODEUP(NODEIN) ; 
+NODEUP(NODEIN) ;
  N TMP,NN,TMPN,NDLIMIT
  S TMPN=NODEIN,NDLIMIT=NODEIN,TMP=""
-START 
+START
  ;S RESULT(J)="  TMPN="_TMPN,J=J+1
  S TMP=$O(@TMPN,-1)       ; same level prev subscript
  ;S RESULT(J)="  * TMPN="_TMPN_" TMP="_TMP_" $O(TMPN,-1)="_$O(@TMPN,-1),J=J+1
  I TMP'="" S TMP=$$NDNAME(TMPN,TMP) Q $$NDDOWN(TMP,TMPN)  ; not blank - find down
  I $QL(TMPN)=1 Q "" ; quit if it is the first level        ; blank. leave if first one
- S NN=$NA(@TMPN,$QL(TMPN)-1)   ; level up 
+ S NN=$NA(@TMPN,$QL(TMPN)-1)   ; level up
  I $D(@NN)#10=1 Q $$NDDOWN(NN,NDLIMIT) ; check if the node exists
- S TMP=$O(@NN,-1)              ; prev subscript 
- ;S RESULT(J)="    NN="_NN_" $O(@NN,-1)="_$O(@NN,-1),J=J+1 
+ S TMP=$O(@NN,-1)              ; prev subscript
+ ;S RESULT(J)="    NN="_NN_" $O(@NN,-1)="_$O(@NN,-1),J=J+1
  I TMP="" S TMPN=NN G START    ; if blank - search on prev level
  I TMP'="" D                   ; not blank - search down
- .; S RESULT(J)="  NN="_NN_" TMP="_TMP_" $$NDNAME(NN,TMP)="_$$NDNAME(NN,TMP),J=J+1 
+ .; S RESULT(J)="  NN="_NN_" TMP="_TMP_" $$NDNAME(NN,TMP)="_$$NDNAME(NN,TMP),J=J+1
  . S NN=$$NDNAME(NN,TMP),TMP=$$NDDOWN(NN,NDLIMIT)
  Q TMP
  ;
 DIM ; Code validation
  N G,OUT,L,C,IND S G="",OUT=0,C="",IND=""
- F I=1:1 D  Q:OUT=1 
+ F I=1:1 D  Q:OUT=1
  . S G=$O(ARRAY(G))
  . I G="" S OUT=1
- . I G'="" D 
+ . I G'="" D
  . . S X=ARRAY(G),C=ARRAY(G),IND=G,L=""
  . . S RESULT(IND)="IND="_IND_"  "_L_" code: """_C_""""
  . . D ^DIM
@@ -443,7 +443,7 @@ REXISTS ; Verifies if the routine exists
  S X=ARRAY(0) X ^%ZOSF("TEST") I '$T S RESULT(0)="-1^Routine "_ARRAY(0)_" not found" Q
  E  S RESULT(0)="0^"_ARRAY(0)_" found"
  Q
- ;  
+ ;
 RSOURCE ; Returns Routine Source
  ; based on MD* routines
  N DIF,X,XCNP,ZZNAME
@@ -482,13 +482,13 @@ RLIST ;Modifcation-adding GTm to RLIST 01062016 jeb
  X ZZAAR
  S RESULT(0)=CNT
  Q
- ; 
-RCHKSUM ; Returns routine list with checksums based on provided target. 
+ ;
+RCHKSUM ; Returns routine list with checksums based on provided target.
  N I,J
  S J=ARRAY(0)
  F I=1:1:ARRAY(0) D
- . S X=ARRAY(I) 
- . X ^%ZOSF("TEST") 
+ . S X=ARRAY(I)
+ . X ^%ZOSF("TEST")
  . I $T X ^%ZOSF("RSUM") S RESULT(I)=X_"^"_Y_"^"_$$LOAD2L(X)
  . I '$T S RESULT(I)=X_"^?"
  S RESULT(0)=ARRAY(0)_"^rtName~rtChecksum~rtLine~rtLine"
@@ -498,7 +498,7 @@ LOAD2L(X)  ;Load routine first lines
  S DIF="^TMP($J,",XCNP=0,R="" X ^%ZOSF("LOAD")
  I $D(R) S R=$G(^TMP($J,1,0))_"~"_$G(^TMP($J,2,0))
  K ^TMP($J)
- Q R 
+ Q R
  ;
  ; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ; GLOBALS LISTER
@@ -520,7 +520,7 @@ SHOW ; Local. Not used as an OPTION
  ;S RESULT(J)=$D(NODE)_"|"_NODE_"|"_@NODE,FOUND=1,J=J+1
  S J=J+1,RESULT(J)=J-1_"|"_NODE_"|"_@NODE,FOUND=1 ;,J=J+1
  Q
- ; 
+ ;
  ; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ; FileMan Files
  ; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -536,7 +536,7 @@ FMFNAME ;
  S:$D(@($$ROOT^DILFD(ARRAY(0),,0)_"0)"))#10'=0 RESULT(2)=@($$ROOT^DILFD(ARRAY(0),,0)_"0)")
  Q
  ;
-FFCHAR(FNUM,FFNUM,CHAR) ; 
+FFCHAR(FNUM,FFNUM,CHAR) ;
  ; internal. Used by FMFLDDEF. Field Char by File (FNUM) and Field (FFNUM)
  N FFC  S FFC=""
  S:$D(^DD(FNUM,FFNUM,CHAR))#10=1 FFC=FNUM_"^"_FFNUM_"^"_CHAR_"^"_^DD(FNUM,FFNUM,CHAR)
@@ -575,7 +575,7 @@ HELP ;
  S RESULT(0)=(J-1)
  Q
  ;*****************************************************************
- ;* Lines not started with " ;;" are not included in the output 
+ ;* Lines not started with " ;;" are not included in the output
  ;*****************************************************************
  ;*
  ;;This RPC provides data for ZZFMVIEW GUI
@@ -596,16 +596,16 @@ HELP ;
  ;;    RESULT(1)=data_1
  ;;    RESULT(2)=data_2
  ;;    ...
- ;;    RESULT(RC)=data_RC 
+ ;;    RESULT(RC)=data_RC
  ;;
  ;;Zero or positive RC identifies the last index of the RESULT array
- ;;For negative RC description of the error is in the second piece ("^" delimeter) of the RESULT(0)  
+ ;;For negative RC description of the error is in the second piece ("^" delimeter) of the RESULT(0)
  ;;
  ;;The next actions (OPTIONS) are supported by this version:
  ;*** VALID OPTIONS LIST STARTS HERE ***
  ;;HELP     - this text
  ;;NUL      - returns "0^NULL"
- ;;VERSION  - returns version of the RPC 
+ ;;VERSION  - returns version of the RPC
  ;;ECHO     - returns array sent as the parameter
  ;
  ;;REXISTS  - verifies if the routine exists
@@ -635,7 +635,7 @@ HELP ;
  ;;
  ;;     ZZAND(0)="-1^Option XXX is not supported by this RPC"
  ;;
- ;;HELP 
+ ;;HELP
  ;;     D RPC(.ZZAND,"HELP")
  ;;     - returns contents of the HELP. First line of the result array contains number of the lens returned (64)
  ;;
@@ -644,7 +644,7 @@ HELP ;
  ;;     ...
  ;;     ZZAND(64)=""
  ;;
- ;;VERSION 
+ ;;VERSION
  ;;     D RPC(.ZZAND,"VERSION")
  ;;     - returns the RPC implementation version
  ;;
@@ -656,7 +656,7 @@ HELP ;
  ;;     - returns the array as it was received by the RPC
  ;;
  ;;     ZZAND(0)="ECHO TEST Line 1"
- ;;     ZZAND(1)="ECHO TEST Line 2" 
+ ;;     ZZAND(1)="ECHO TEST Line 2"
  ;;
  ;;RSOURCE
  ;;     S ZZAA(0)="ZZFMVIEW" D RPC(.ZZAND,"RSOURCE",.ZZAA)
@@ -674,13 +674,13 @@ HELP ;
  ;;
  ;;     ZZAND(0)="0^ZZRPCV1 SAVED"
  ;;
- ;;FMFNAME  
+ ;;FMFNAME
  ;;    S ZZAA(0)="1" D RPC(.ZZAND,"FMFNAME",.ZZAA)
  ;;    - returns file "1" description
  ;;
  ;;    ZZAND(0)=2
  ;;    ZZAND(1)="^DIC("
- ;;    ZZAND(2)="FILE^1^9999999.64^2366" 
+ ;;    ZZAND(2)="FILE^1^9999999.64^2366"
  ;;
  ;;- file global name and info by file number
  ;;
@@ -712,13 +712,13 @@ HELP ;
  ;;    ZZAND(10)="1|^DIC(.11,""%D"",3,0)|the ^DD for a particular field, new-style cross-references are stored in"
  ;;
  ; HELP ENDS HERE ***********************************************************
- ; 
+ ;
     </pre>
-        
-    </td>    
+
+    </td>
     </tr>
 <tr>
-    
+
     <td colspan="2" align="right"><hr><br>November 2018
     </td>
     </tr>
